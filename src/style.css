@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff7d2;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.field {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 150px);
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 150px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row-animate {
+  animation: magic ease-out 0.2s infinite;
+}
+
+@keyframes magic {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.letter {
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #8f6b49;
+
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.keyboard {
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  max-width: 620px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.keys-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  touch-action: manipulation;
+  gap: 5px;
+}
+
+.key {
+  font-weight: bold;
+  border: 0;
+  height: 48px;
+  cursor: pointer;
+  color: white;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: #57422e;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  z-index: 2;
+  position: absolute;
+
+  padding: 20px;
+
+  background-color: #57422e;
+  color: white;
+
+  text-align: center;
+}
+
+.modal .btn {
+  color: white;
+  background-color: #401e09;
+  padding: 10px 20px;
+  border: none;
+}
+.modal .btn:hover {
+  opacity: 0.8;
+}
+
+.modal::after {
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  display: block;
+
+  content: " ";
+  background-color: rgba(46, 43, 43, 0.521);
+
+  height: 100vh;
+  width: 100vw;
+}
